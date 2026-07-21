@@ -53,6 +53,7 @@ a { color: inherit; text-decoration: none; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
 
+/* NAV */
 header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(250,249,246,0.9);
@@ -73,6 +74,7 @@ nav.wrap {
   border-radius: 100px; font-size: 13.5px; font-weight: 500;
 }
 
+/* HERO */
 .hero {
   padding: 96px 0 72px;
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
@@ -97,6 +99,7 @@ nav.wrap {
   font-weight: 500; font-size: 15px; display: inline-block;
 }
 
+/* bento hero visual — compartments echoing a 도시락 tray */
 .bento {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -118,6 +121,7 @@ nav.wrap {
 .bento .c2 { background: var(--tomato); }
 .bento .c3 { background: #a9721f; }
 
+/* SECTION HEADS */
 .section { padding: 88px 0; }
 .section-head { max-width: 560px; margin-bottom: 48px; }
 .section-head .eyebrow { margin-bottom: 14px; }
@@ -126,6 +130,7 @@ nav.wrap {
 
 .alt-bg { background: var(--bg-alt); }
 
+/* MENU — bento asymmetric grid */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -156,6 +161,7 @@ nav.wrap {
 .m-4 { grid-column: span 2; grid-row: span 2; background-image: url('https://lh3.googleusercontent.com/GuDciFgys_VdLGwx2gEm99gX6Cyu3WFIISi1BmQTFpHK1HFPcaaCJHlT41qvhFXwv1SsEQGjb-Ksau0u0DQ_fMhgCxwPf9M-SdDKDEohaTVCw6mrEobF=w700-h500-n'); }
 .m-5 { grid-column: span 2; background-image: url('https://lh3.googleusercontent.com/Pyl44SsLr8Hjs3CrKKGTLnm0MsVTAJxY905ASZpuT7Ehh5a-8SpQWjhIE2PuMZXcAAMXkh7YBNswbNBcilh8VusanZWdunAhMus_ALjTthjbsHmt22RyWnI=w700-h500-n'); }
 
+/* STORY / STATS */
 .story {
   display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center;
 }
@@ -171,12 +177,32 @@ nav.wrap {
 .story h2 { font-size: 30px; color: var(--olive-deep); margin-bottom: 18px; }
 .story p { color: var(--ink-soft); font-size: 15.5px; margin-bottom: 16px; max-width: 480px; }
 
+/* TIMELINE */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 4px; top: 6px; bottom: 6px;
+  width: 1px; background: var(--line);
+}
+.tl-year { position: relative; margin-bottom: 40px; }
+.tl-year:last-child { margin-bottom: 0; }
+.tl-year::before {
+  content: ''; position: absolute; left: -32px; top: 4px;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--tomato);
+}
+.tl-year h3 {
+  font-family: 'Noto Serif KR'; font-size: 22px; color: var(--olive-deep); margin-bottom: 12px;
+}
+.tl-events { display: flex; flex-direction: column; gap: 8px; }
+.tl-event { display: flex; gap: 14px; font-size: 14px; }
+.tl-event .tl-month { color: var(--olive); font-weight: 500; min-width: 28px; }
+.tl-event .tl-desc { color: var(--ink-soft); }
 .loc-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 .loc-item { background: var(--bg); padding: 26px 22px; }
 .loc-item h4 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; }
 .loc-item p { font-size: 13px; color: var(--ink-soft); }
 .loc-item .tel { color: var(--olive); font-weight: 500; margin-top: 6px; display: block; }
 
+/* CTA */
 .cta-section {
   background: var(--olive-deep); border-radius: 24px; padding: 64px 56px;
   display: flex; justify-content: space-between; align-items: center; gap: 40px;
@@ -185,6 +211,7 @@ nav.wrap {
 .cta-section h2 { color: var(--white); font-size: 28px; max-width: 380px; }
 .cta-section p { color: rgba(255,255,255,0.6); font-size: 14.5px; margin-top: 10px; }
 
+/* FOOTER */
 footer { padding: 56px 0 40px; }
 .foot-grid { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 32px; border-bottom: 1px solid var(--line); margin-bottom: 24px;}
 .foot-grid .logo { margin-bottom: 10px; }
@@ -213,6 +240,7 @@ footer { padding: 56px 0 40px; }
     <div class="navlinks">
       <a href="#menu">메뉴</a>
       <a href="#story">브랜드 스토리</a>
+      <a href="#history">히스토리</a>
       <a href="#locations">매장 안내</a>
       <a href="#contact">가맹문의</a>
     </div>
@@ -282,6 +310,63 @@ footer { padding: 56px 0 40px; }
       <p>2022년 파주에서 문을 연 아름다운한끼는 케이터링 노하우를 바탕으로 도시락 사업에 전념하며 빠르게 성장했습니다. 방송 촬영 현장과 기업 행사부터 개인 선물까지, 매장을 하나씩 늘려오며 신뢰를 쌓아왔습니다.</p>
       <p>가맹 사업을 통해 더 많은 곳에서 아름다운한끼를 만날 수 있도록 준비하고 있습니다.</p>
       <a href="#contact" class="btn-ghost">브랜드 스토리 더 보기</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="history">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">HISTORY</div>
+      <h2>2022년부터 지금까지</h2>
+      <p>작은 케이터링에서 시작해 하나씩 쌓아온 기록입니다.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-year">
+        <h3>2026</h3>
+        <div class="tl-events">
+          <div class="tl-event"><span class="tl-month">03</span><span class="tl-desc">채널A 「금쪽같은 내새끼」 촬영 도시락</span></div>
+          <div class="tl-event"><span class="tl-month">02</span><span class="tl-desc">FNC 엔터테인먼트 앰퍼샌드원 팬도시락</span></div>
+          <div class="tl-event"><span class="tl-month">01</span><span class="tl-desc">아름다운한끼 마포상암점 오픈</span></div>
+        </div>
+      </div>
+      <div class="tl-year">
+        <h3>2025</h3>
+        <div class="tl-events">
+          <div class="tl-event"><span class="tl-month">10</span><span class="tl-desc">돌고래유괴단 촬영도시락 (파주촬영장)</span></div>
+          <div class="tl-event"><span class="tl-month">09</span><span class="tl-desc">2025 아육대 도시락 (고양실내체육관)</span></div>
+          <div class="tl-event"><span class="tl-month">07</span><span class="tl-desc">배우 지성 차이나팬도시락</span></div>
+          <div class="tl-event"><span class="tl-month">05</span><span class="tl-desc">서울시교육청 납품</span></div>
+          <div class="tl-event"><span class="tl-month">03</span><span class="tl-desc">미래에셋 여의도 행사도시락 납품</span></div>
+          <div class="tl-event"><span class="tl-month">02</span><span class="tl-desc">현대자동차 신년회 도시락 납품</span></div>
+          <div class="tl-event"><span class="tl-month">01</span><span class="tl-desc">창업지원본부 '와이닷컴퍼니' 창업, 체인점 사업 본격 시작 · 미사점 오픈</span></div>
+        </div>
+      </div>
+      <div class="tl-year">
+        <h3>2024</h3>
+        <div class="tl-events">
+          <div class="tl-event"><span class="tl-month">12</span><span class="tl-desc">아름다운한끼 최대매출 경신</span></div>
+          <div class="tl-event"><span class="tl-month">07</span><span class="tl-desc">일산점 오픈</span></div>
+          <div class="tl-event"><span class="tl-month">06</span><span class="tl-desc">일산점으로 본점 이전</span></div>
+          <div class="tl-event"><span class="tl-month">04</span><span class="tl-desc">인천점 오픈</span></div>
+        </div>
+      </div>
+      <div class="tl-year">
+        <h3>2023</h3>
+        <div class="tl-events">
+          <div class="tl-event"><span class="tl-month">09</span><span class="tl-desc">단체도시락 전 메뉴 개발 완료</span></div>
+          <div class="tl-event"><span class="tl-month">06</span><span class="tl-desc">상표등록출원 및 가맹사업 착수</span></div>
+          <div class="tl-event"><span class="tl-month">02</span><span class="tl-desc">재료 개발 및 음료 전 재료 브랜딩 완료</span></div>
+          <div class="tl-event"><span class="tl-month">01</span><span class="tl-desc">케이터링에서 도시락 사업으로 전환</span></div>
+        </div>
+      </div>
+      <div class="tl-year">
+        <h3>2022</h3>
+        <div class="tl-events">
+          <div class="tl-event"><span class="tl-month">08</span><span class="tl-desc">파주점 오픈</span></div>
+          <div class="tl-event"><span class="tl-month">07</span><span class="tl-desc">아름다운한끼 설립</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
